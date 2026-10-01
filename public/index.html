@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>2D Pickleball</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <div id="join-screen" class="material-card">
+    <h1>2D Pickleball</h1>
+    
+    <div class="rules-section">
+      <h3>Our Rules</h3>
+      <ul>
+        <li><strong>Serving:</strong> Tap "SERVE" or press Space to serve.</li>
+        <li><strong>Sideout Scoring:</strong> You only win points when YOU are the server!</li>
+        <li><strong>Winning:</strong> First to 5 points wins this arcade mode.</li>
+      </ul>
+    </div>
+
+    <h3>Select Character</h3>
+    <div class="char-grid">
+      <div class="char-option selected" data-char="👱‍♂️">👱‍♂️<br>Ace</div>
+      <div class="char-option" data-char="👩‍🦰">👩‍🦰<br>Smash</div>
+      <div class="char-option" data-char="👴">👴<br>Dink</div>
+      <div class="char-option" data-char="👩🏾‍🦱">👩🏾‍🦱<br>Spin</div>
+      <div class="char-option" data-char="🧑🏻‍🦱">🧑🏻‍🦱<br>Volley</div>
+    </div>
+    
+    <button id="join-btn" class="md-button">Join Game</button>
+  </div>
+
+  <div id="game-screen" style="display: none;">
+    <div class="header material-card-header">
+      <div class="player-info">
+        <span id="p1-info">P1 👱‍♂️</span>
+        <div id="p1-serve-badge" class="serve-badge">SERVER</div>
+      </div>
+      
+      <span id="score-display">0 - 0</span>
+      
+      <div class="player-info" style="text-align: right;">
+        <span id="p2-info">👩‍🦰 P2</span>
+        <div id="p2-serve-badge" class="serve-badge" style="display: none;">SERVER</div>
+      </div>
+    </div>
+    
+    <div class="canvas-container">
+      <canvas id="gameCanvas" width="800" height="400"></canvas>
+      <button id="serve-btn" class="md-button serve-action" style="display: none;">SERVE NOW</button>
+    </div>
+    
+    <div class="controls-hint material-card-small">
+      <strong>Controls:</strong> Drag up/down on the court to move. When serving, tap "Serve Now" or hit Spacebar.
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
